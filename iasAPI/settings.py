@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
+    
 ]
 
 
@@ -64,11 +65,13 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5000",
     "http://localhost:8081",
+    "http://localhost:8000",
 ]
 
 CORS_ALLOWED_WHITELIST = [
     "http://localhost:5000",
     "http://localhost:8081",
+    "http://localhost:8000",
 ]
 
 CORS_ALLOW_METHODS = [

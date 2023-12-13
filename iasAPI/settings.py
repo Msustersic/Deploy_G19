@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'msustersic.pythonanywhere.com',
 ]
 
 

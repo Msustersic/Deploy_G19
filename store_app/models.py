@@ -19,7 +19,6 @@ class Store(Model):
     class Meta: 
         db_table = "ias" # Definimos el nombre de la tabla
 
-
     def __str__(self):
         return f"La IA: {self.nombre}, su link es: {self.link}"
 
@@ -49,3 +48,4 @@ class Store(Model):
             (field.verbose_name, field.value_from_object(self))
             for field in self.__class__._meta.fields[1:]
         ]
+

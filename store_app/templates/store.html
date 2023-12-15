@@ -12,6 +12,7 @@
   <meta name="author" content="Valentín, Matías, Julián, Mario">
 
   <link rel="stylesheet" href="{% static './css/styles.css' %}" />
+  <link rel="stylesheet" href="{% static './css/main.css' %}" />
 </head>
 
 <body>
@@ -22,45 +23,53 @@
         title="Grupo-19" />
     </a>
     <h1>IAs list</h1>
+
+    <div class="oculto">
+      {% if user.is_authenticated %}
+      <a href="{% url 'store:create' %}" class="btnNew" type="button" title="Agregar Inteligencia Artificial">
+          <b>+</b> Agregar IA
+      </a>
+      {% else %}
+      {% endif %}
+    </div>
+
     <nav id="menuPri">
       <ul>
         <li><a href="/">Inicio</a></li>
-        <li><a href="{% url 'store:all' %}">Funciones</a></li>
+        <li><a href="{% url 'store:all' %}">IAs</a></li>
         <li><a href="{% url 'comentarios' %}">Comentarios</a></li>
-        <li><a href="{% url 'login' %}"><i class="bi bi-person-circle"></i></a></li>
+        {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}"><i class="bi bi-x-square"></i></a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}"><i class="bi bi-person-circle"></i></a></li>
+        {% endif %}
       </ul>
     </nav>
-
     <button id="btnMenuPri" type="button"></button>
 
   </header>
 
   <main>
-
     <section id="iaByFunctionList">
 
-    <div>
-
+    <div id="iaList">
       {% for store in store_list %}
-        <ul>
-          <li>id : {{store.ias_id}}</li>
-          <li>id : {{store.ias_nombre}}</li>
-        </ul>
-
+      <ul>
+        <li>
+          {% if user.is_authenticated %}
           <div>
             <a href="{% url 'store:delete' store.id %}">❌</a>
+            <a href="{% url 'store:update' store.id %}">🖋️</a>
           </div>
-
-          <div>
-            <a href="{% url 'store:detail' store.id %}">🖋️</a>
-          </div>
-
+          {% endif %}
+          <a href="{{store.link}}" target="_blank">
+          <img src="{{store.imagen}}" title= "{{store.nombre}}" alt="{{store.nombre}}">
+        </li>
+      </ul>
       {% endfor %}
-      
     </div>
 
     </section>
-   
 
     <section id="comments">
       <a href="{% url 'dejar_comentario' %}" class="bi bi-chat-right-text"> dejanos tu comentario!</a>
@@ -116,8 +125,6 @@
     <img src="{% static './media/icons/logo_tecno.png' %}" alt="Logo de CSS-3" style="width: 50px;height: 33.5px;">
   </footer>
 
-  <script src="{% static './js/index.js' %}"></script>
-  <script src="{% static './js/iasByType/idxIAsByType.js' %}" type="module"></script>
 </body>
 
 </html>

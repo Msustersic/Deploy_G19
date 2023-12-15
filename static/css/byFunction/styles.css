@@ -10,6 +10,8 @@
    background-color: var(--color-lst1);
 }
 
+
+
 .byFunction:nth-child(2n){
    background-color: var(--color-lst2);
 }
@@ -60,7 +62,4 @@
       width: 80px;  
    }
 
- /*   .byFunction:nth-child(2n+1){
-      background-color: var(--color-10);
-   } */
 }

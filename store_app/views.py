@@ -7,13 +7,14 @@ from django.views.generic.edit import DeleteView, UpdateView, CreateView
 from django.views.generic.detail import DetailView # Me permite ver un elemento individual
 
 from .models import Store
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.contrib.auth import logout
 
 
 def logout_view(request):
     logout(request)
     return redirect('index')
+
 
 class StoreBaseView(View):
     template_name = 'store.html'
@@ -42,6 +43,8 @@ class StoreUpdateView(StoreBaseView,UpdateView):
 class StoreDeleteView(StoreBaseView,DeleteView):
     template_name = "store_delete.html"
     extra_context = {"tipo": "Borrar Store"}
+
+
 
 
 

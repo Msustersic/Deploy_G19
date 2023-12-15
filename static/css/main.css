@@ -6,6 +6,8 @@ body>main {
    overflow-y: scroll;
 }
 
+
+
 #iaList {
    list-style: none;
    display: flex;
@@ -14,6 +16,7 @@ body>main {
    justify-content: center;
    gap: 5vw;
    overflow: hidden;
+   list-style-type: none;
 }
 
 #iaList img {

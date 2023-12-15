@@ -14,12 +14,9 @@ from .views import Crear
 from .views import logout_view
 
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", IndexPage.as_view(), name="index"),
-    path("/byFunction", Funcion.as_view(), name="byFunction"),
     path("/comentarios", Comentarios.as_view(), name="comentarios"),
     path("/login", Login.as_view(), name="login"),
     path("/dejar_comentario", Dejar_comentario.as_view(), name="dejar_comentario"),

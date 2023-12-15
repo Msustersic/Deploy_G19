@@ -25,7 +25,7 @@
     <nav id="menuPri">
       <ul>
         <li><a href="/">Inicio</a></li>
-        <li><a href="{% url 'store:all' %}">Funciones</a></li>
+        <li><a href="{% url 'store:all' %}">IAs</a></li>
         <li><a href="{% url 'comentarios' %}">Comentarios</a></li>
         {% if user.is_authenticated %}
             <li><a href="{% url 'logout' %}"><i class="bi bi-x-square"></i></a></li>
@@ -41,15 +41,6 @@
 
   <main>
     <section>
-      <div class="oculto">
-        {% if user.is_authenticated %}
-        <a href="{% url 'store:create' %}" class="btnNew" type="button" title="Agregar Inteligencia Artificial">
-            <b>+</b> Agregar IA
-        </a>
-        {% else %}
-        {% endif %}
-      </div>
-      <ul id="iaList">
 
         <div>
 
@@ -117,7 +108,8 @@
     </section>
     <img src="{% static './media/icons/logo_tecno.png' %}" alt="Logo de CSS-3" style="width: 50px;height: 33.5px;">
   </footer>
-
+  <script src="{% static './js/index.js' %}"></script>
+  <script src="{% static './js/index/idxIAsList.js' %}" type="module"></script>
 
 </body>
 

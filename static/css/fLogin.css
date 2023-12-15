@@ -1,0 +1,105 @@
+#fLogin {
+   display: block;
+   width: 90%;
+   margin: calc(100vh / 4) auto;
+   padding: 25px;
+   background-color: var(--color-0a);
+   border: 1px solid var(--color-8);
+   border-radius: 1rem;
+   box-shadow: var(--sombra-2);
+}
+
+fieldset {
+   padding: 1rem 0.5rem;
+   margin-bottom: 25px;
+   font-size: var(--font-1);
+   color: var(--color-3);
+   border: 1px solid var(--color-8a);
+   border-radius: 0.5rem;
+}
+
+legend {
+   padding: 1px 20px;
+   border: none;
+   border-radius: 0.5rem;
+   font-size: var(--font-1);
+   color: var(--color-6);
+   background-color: var(--color-3);
+}
+
+label {
+   display: block;
+   margin: 2px 1rem;
+}
+
+input {
+   margin: 0 auto;
+   padding: 0.5rem;
+   width: 100%;
+   color: var(--color-1);
+   background-color: var(--color-10);
+   border: none;
+   border-radius: 0.3rem;
+   box-shadow: var(--sombra-1);
+}
+
+input:invalid {
+   outline: 2px solid var(--color-wrong);
+}
+
+input:valid {
+   outline: 2px solid var(--color-ok);
+   accent-color: gold;
+}
+
+.req {
+   color: red;
+}
+
+.joinBtn:active {
+   box-shadow: 2px 2px 5px var(--color-active);
+}
+
+input:autofill {
+   border: 3px solid var(--color-autofill);
+}
+
+input:-webkit-autofill {
+   border: 3px solid var(--color-autofill);
+}
+
+input:empty {
+   outline: 1px solid var(--color-null);
+   height: 1em;
+}
+
+#btnLogin{
+   margin: 0 auto;
+   padding: 0.3rem 1rem;
+   font-size: var(--font-2);
+   color: var(--color-3);
+   border-radius: 0.5rem;
+   box-shadow: var(--sombra-3);
+}
+
+@media only screen and (min-width: 768px) {
+   #fLogin {
+      width: 40%;
+   }
+
+   fieldset {
+      font-size: var(--font-2);
+   }
+
+   legend {
+      font-size: var(--font-3);
+   }
+
+   input {
+      margin: 0 auto;
+      padding: 0.7rem 1rem;
+      font-size: var(--font-3);
+      border: none;
+
+   }
+}

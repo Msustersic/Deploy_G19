@@ -1,0 +1,78 @@
+body>footer {
+   height: 100px;
+   width: 100svw;
+
+   position: fixed;
+   bottom: 0;
+   left: 0;
+
+   padding: 0.4rem;
+   font-size: var(--font-0);
+   color: var(--color-8);
+   background-color: var(--color-1);
+   /* background: url(../media/images/bg_footer-576.png) no-repeat center;
+   background-size: 100% 100%; */
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+body>footer>section:nth-child(1){
+   align-self:flex-start;
+}
+
+body>footer>section:nth-child(2){
+   padding:0.2rem 0.5rem;
+   font-size: var(--font-0);
+   align-self:flex-end;
+}
+
+body>footer>img{
+   align-self:flex-start;
+}
+
+body>footer>section:nth-child(2) a:link,
+body>footer>section:nth-child(2) a:visited,
+body>footer>section:nth-child(2) a:active{
+   margin-left: 2px;
+   color: var(--color-7);
+   text-decoration: none;
+}
+
+body>footer>section:nth-child(2) a:nth-child(3n+2) {
+   margin-left: 5px;
+   color: var(--color-mail);
+}
+
+body>footer>section:nth-child(2) a:nth-child(3n+3) {
+   color: var(--color-wsp);
+}
+
+body>footer>section:nth-child(2) a:nth-child(3n+1) {
+   color: var(--color-github);
+}
+
+#grupo a:hover {
+   color: var(--color-6);
+}
+
+@media only screen and (min-width: 768px) {
+
+   body>footer {
+      font-size: var(--font-3);
+      padding: 0.3rem 1.5rem;
+   }
+
+   body>footer>section:nth-child(2) {
+      padding:0 1.5rem;
+      font-size: var(--font-2);
+   }
+}
+
+@media only screen and (min-width: 1200px) {
+
+   body>footer {
+      left: calc((100svw - 1200px) / 2);
+      
+   }
+}

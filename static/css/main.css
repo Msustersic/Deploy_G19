@@ -1,0 +1,45 @@
+body>main {
+   height: calc(100% - 160px);
+   padding: 1rem;
+   border-left: 1px solid var(--color-4);
+   border-right: 1px solid var(--color-5);
+   overflow-y: scroll;
+}
+
+#iaList {
+   list-style: none;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 5vw;
+   overflow: hidden;
+}
+
+#iaList img {
+   width: 130px;
+   height: 100px;
+   border-radius: 25px;
+   box-shadow: var(--sombra-0);
+   transition: transform 0.3s ease;
+}
+
+#iaList>li img:hover {
+   transform: scale(1.05);
+}
+
+@media only screen and (min-width: 768px) {
+
+   #iaList {
+      gap: 2rem;
+   }
+
+   #iaList img {
+      width: 195px;
+      height: 150px;
+   }
+
+   #iaList>li img:hover {
+      transform: scale(1.06);
+   }
+}

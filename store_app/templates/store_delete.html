@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Crear IA</title>
+  <link rel="icon" type="image/x-icon" href="{% static './media/icons/logo_g19.png' %}" />
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="Front-End del trabajo práctico del curso Full-Stack Python 2023 2C - Codo a Codo" />
+  <meta name="author" content="Valentín, Matías, Julián, Mario" />
+
+  <link rel="stylesheet" href="{% static './css/styles.css' %}" />
+</head>
+
+<body>
+  <header id="headerPri">
+
+    <a id="logoSitio" href="https://net-m.myddns.me">
+      <img src="{% static './media/icons/logo_g19.png' %}" width="55" height="55" alt="Logo del Portfolio - Grupo-19"
+        title="Grupo-19" />
+    </a>
+    <h1>IAs list</h1>
+    <nav id="menuPri">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="{% url 'store:all' %}">Funciones</a></li>
+        <li><a href="{% url 'comentarios' %}">Comentarios</a></li>
+        <li><a href="{% url 'login' %}"><i class="bi bi-person-circle"></i></a></li>
+      </ul>
+    </nav>
+
+    <button id="btnMenuPri" type="button"></button>
+
+  </header>
+
+  <main>
+    <h2>Estas seguro de borrar la IA?</h2>
+    <h2>{{store.nombre}}</h2>
+    <form id="fNewIa" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="{{ tipo }}"/>
+    </form>
+  </main>
+
+
+  <footer>
+    <section>
+      <p>CaC FS PYTHON 2023</p>
+      <p><strong>Comisión 23507</strong></p>
+      <p><i>Grupo 19</i></p>
+    </section>
+
+    <section>
+      <article>
+        <span>Matías Andrés Sustersic</span>
+        <a class="bi bi-envelope" href="mailto:msuster93@gmail.com?$subject=Contacto%20desde%20IAs list"
+          title="Email de Matías Andrés Sustersic"></a>
+        <a class="bi bi-whatsapp" href="https://api.whatsapp.com/send?phone=5491123917168" target="_blank"
+          title="Whatsapp de Matías Andrés Sustersic"></a>
+        <a class="bi bi-github iconRed iconRedG icon tresSeg" href="https://github.com/Msustersic" target="_blank"
+          title="GitHub"></a>
+      </article>
+      <article>
+        <span>Mario Rubén Lerman</span>
+        <a class="bi bi-envelope" href="mailto:mariolerman@gmail.com?$subject=Contacto%20desde%20IAs list"
+          title="Email de Mario Rubén Lerman"></a>
+        <a class="bi bi-whatsapp"
+          href="https://api.whatsapp.com/send?phone=5491145777353&text=Contacto%20desde%20IAs list" target="_blank"
+          title="Whatsapp de Mario Lerman"></a>
+        <a class="bi bi-github iconRed iconRedG icon tresSeg" href="https://github.com/Marior70" target="_blank"
+          title="GitHub"></a>
+      </article>
+      <article>
+        <span>Alejo Podbielski</span>
+        <a class="bi bi-envelope" href="mailto:valentinpodbielski71@gmail.com?$subject=Contacto%20desde%20IAs list"
+          title="Email de Alejo Podbielski"></a>
+        <a class="bi bi-whatsapp" href="https://api.whatsapp.com/send?phone=5491162037019" target="_blank"
+          title="Whatsapp de Alejo Podbielski"></a>
+        <a class="bi bi-github iconRed iconRedG icon tresSeg" href="https://github.com/Valentinpodbielski"
+          target="_blank" title="GitHub"></a>
+      </article>
+      <article>
+        <span>Julián Albornoz</span>
+        <a class="bi bi-envelope" href="mailto:julian.alborno05@gmail.com?$subject=Contacto%20desde%20IAs list"
+          title="Email de Julián Albornoz"></a>
+        <a class="bi bi-whatsapp" href="https://api.whatsapp.com/send?phone=5491150051266" target="_blank"
+          title="Whatsapp de Julián Albornoz"></a>
+        <a class="bi bi-github iconRed iconRedG icon tresSeg" href="https://github.com/julianliyo" target="_blank"
+          title="GitHub"></a>
+      </article>
+    </section>
+    <img src="../../assets/media/icons/logo_tecno.png" alt="Logo de CSS-3" style="width: 50px;height: 33.5px;">
+  </footer>
+
+  <script src="{% static './js/comments/idxFComment.js' %}" type="module"></script>
+  <script src="{% static './js/index.js' %}"></script>
+</body>
+
+</html>

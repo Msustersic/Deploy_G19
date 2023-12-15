@@ -1,0 +1,154 @@
+#headerPri {
+   height: 65px;
+   padding: 0 1rem;
+   text-align: center;   
+   background-color: var(--color-2);
+   font-size: var(--font-2);
+   color: var(--color-8);
+   box-shadow: var(--sombra-0);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+#logoSitio {
+   width: 60px;
+   height: 60px;
+   border: 1px solid var(--grad-1);
+}
+
+body>header button {
+   background-color: transparent;
+   border: none;
+}
+
+#btnMenuPri {
+   width: 32px;
+   height: 32px;
+   background: url(../media/icons/btnMenuPri.png) no-repeat center;
+   background-size: cover;
+}
+
+#menuPri>ul {
+   position: fixed;
+   top: 70px;
+   left: 0;
+
+   width: 60%;
+   height: 82svh;
+   /* Ajustar al fijar alto de footer */
+   padding-top: 30%;
+
+   background: linear-gradient(315deg, var(--color-2), var(--color-3a)70.71%);
+   box-shadow: var(--sombra-0);
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-items: center;
+   align-content: center;
+
+   list-style: none;
+   z-index: 9;
+
+   transform: translateX(-100%);
+   transition: transform 0.3s;
+}
+
+#menuPri>ul.active {
+   transform: translate(0);
+}
+
+#menuPri>ul li {
+   width: 95%;
+   height: calc(82svh / 7);
+   margin: 5% 3%;
+   border-bottom: 2px solid var(--color-4a);
+}
+
+#menuPri a {
+   font-size: var(--font-4);
+   color: var(--color-0);
+   text-decoration: none;
+}
+
+#menuPri i {
+   font-size: var(--font-7);
+   color: var(--color-0);
+   border-bottom: none;
+}
+
+#menuPri>ul li:last-child {
+   border-bottom: none;
+}
+
+/*****   *****   *****   *****   *****   *****   *****   *****   *****   *****/
+/* ESTILOS RESPONSIVOS x BREAKPOINTS */
+/* @media only screen and (min-width: 576px) {
+
+   body>header {
+      justify-content: flex-end;
+      align-items: center;
+   }
+} */
+
+@media only screen and (min-width: 768px) {
+
+
+   #menuPri>ul {
+      position:static;
+      height: 100%;
+      padding: 0;
+      
+      background: transparent;
+      box-shadow: none;
+      
+      flex-direction: row;
+      justify-content:space-between;
+      align-items: center;
+      transform: none;
+      transition: none;
+   }
+
+   #headerPri>h1{
+      display: none;
+   }
+
+   #menuPri>ul li {
+      height: auto;
+      margin: 0 auto;
+      padding: 0 1rem;
+      border-bottom: none;
+   }
+
+   #menuPri a {
+      padding: 0 10px;
+      font-size: var(--font-3);
+      color: var(--color-5);
+
+   }
+
+   #menuPri>ul li>a:hover {
+      color: var(--color-0);
+      font-size: var(--font-4);
+   }
+
+   #menuPri i {
+      font-size: var(--font-7);
+      color: var(--color-4);
+      border-bottom: none;
+   }
+
+   #menuPri>ul li>a i:hover {
+      color: var(--color-0);
+      font-size: var(--font-8);
+   }
+
+   #btnMenuPri {
+      display: none;
+   }
+
+   #menuPri>ul li:last-child {
+      margin-left: 5rem; /* 10rem; */
+   }
+}
